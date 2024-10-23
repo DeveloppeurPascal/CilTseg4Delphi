@@ -1,0 +1,441 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'CilTseg Demo Project'
+  ClientHeight = 889
+  ClientWidth = 664
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Size.Width = 664.000000000000000000
+    Size.Height = 889.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    Viewport.Width = 664.000000000000000000
+    Viewport.Height = 889.000000000000000000
+    object Panel1: TPanel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 644.000000000000000000
+      Size.Height = 193.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object edtAPIServerURL: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 1
+        Position.X = 10.000000000000000000
+        Position.Y = 27.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edtAPISoftID: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 3
+        Position.X = 10.000000000000000000
+        Position.Y = 76.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edtAPISoftToken: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 5
+        Position.X = 10.000000000000000000
+        Position.Y = 125.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label1: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'CilTseg server URL'
+        TabOrder = 0
+      end
+      object Label2: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 59.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Software ID'
+        TabOrder = 2
+      end
+      object Label3: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 108.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Software private token'
+        TabOrder = 4
+      end
+      object btnSaveAPISettings: TButton
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 157.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Use this settings'
+        TextSettings.Trimming = None
+        OnClick = btnSaveAPISettingsClick
+      end
+    end
+    object Panel2: TPanel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 285.000000000000000000
+      Size.Width = 644.000000000000000000
+      Size.Height = 96.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      object Label5: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'License number'
+        TabOrder = 0
+      end
+      object edtLicenseNumber: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 1
+        Position.X = 10.000000000000000000
+        Position.Y = 27.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object btnGetLicenseInfos: TButton
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 59.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Get License Infos'
+        TextSettings.Trimming = None
+        OnClick = btnGetLicenseInfosClick
+      end
+    end
+    object Panel3: TPanel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 223.000000000000000000
+      Size.Width = 644.000000000000000000
+      Size.Height = 42.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object btnGetLastRelease: TButton
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Get Last Release'
+        TextSettings.Trimming = None
+        OnClick = btnGetLastReleaseClick
+      end
+    end
+    object Panel4: TPanel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 401.000000000000000000
+      Size.Width = 644.000000000000000000
+      Size.Height = 194.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object Label4: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'License number'
+        TabOrder = 0
+      end
+      object edtLicenseNumber2: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 1
+        Position.X = 10.000000000000000000
+        Position.Y = 27.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label6: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 59.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'User email'
+        TabOrder = 2
+      end
+      object edtUserEmail: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 3
+        Position.X = 10.000000000000000000
+        Position.Y = 76.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label7: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 108.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Device name or ID'
+        TabOrder = 4
+      end
+      object edtDeviceName: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 5
+        Position.X = 10.000000000000000000
+        Position.Y = 125.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object btnActivateALicense: TButton
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 157.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Activate a license'
+        TextSettings.Trimming = None
+        OnClick = btnActivateALicenseClick
+      end
+    end
+    object Panel5: TPanel
+      Align = Top
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 615.000000000000000000
+      Size.Width = 644.000000000000000000
+      Size.Height = 242.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      object Label8: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'License number'
+        TabOrder = 0
+      end
+      object edtLicenseNumber3: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 1
+        Position.X = 10.000000000000000000
+        Position.Y = 27.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label9: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 59.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'User email'
+        TabOrder = 2
+      end
+      object edtUserEmail2: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 3
+        Position.X = 10.000000000000000000
+        Position.Y = 76.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object Label10: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 108.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Device name or ID'
+        TabOrder = 4
+      end
+      object edtDeviceName2: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 5
+        Position.X = 10.000000000000000000
+        Position.Y = 125.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object edtCheckAnActivation: TButton
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Margins.Bottom = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 206.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'Check a license activation'
+        TextSettings.Trimming = None
+        OnClick = edtCheckAnActivationClick
+      end
+      object Label11: TLabel
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 157.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Activation number'
+        TabOrder = 6
+      end
+      object edtActivationNumber: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        Align = Top
+        TabOrder = 7
+        Position.X = 10.000000000000000000
+        Position.Y = 174.000000000000000000
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Size.Width = 624.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+end
