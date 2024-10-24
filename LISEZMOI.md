@@ -1,19 +1,22 @@
-# Delphi-Projects-Template
+# Librairie cliente de l'API CilTseg pour Delphi
 
 [This page in English.](README.md)
 
-**Un modèle de dépôt git pour mes projets Delphi (ou autres).**
+Ce dépôt de code contient une unité en Object Pascal pour Delphi afin d'utiliser l'API du [gestionnaire de licences CilTseg](https://ciltseg.olfsoftware.fr/) dans vos programmes sous Delphi. Cette librairie permet de :
 
-**Ce template est distribué sous licence MIT. La licence AGPL est pour les projets que je crée à partir de ce template de dépôt de code. Utilisez la licence que vous voulez si vous utilisez ce template.**
+* tester la validité d'une clé de licence
+* tester la validité d'une installation existente (cohérence entre la licence et la clé d'activation par rapport à l'appareil)
+* activer une nouvelle licence
+* obtenir les informations sur la dernière version disponible du logiciel et ses liens de téléchargement
+
+Des programmes d'exemple ou de test de l'API sont disponibles dans le sous-dosier "samples".
+L'unité à utiliser dans vos projets se trouve dans le sous-dossier "src". Elle utilise les unités Olf.RTL.Checksum.pas et u_md5.pas de [ce dépôt](https://github.com/DeveloppeurPascal/librairies).
+
+La librairie utilise les classes natives d'accès au réseau fournies par [Embarcadero](https://www.embarcadero.com) dans [Delphi](https://www.embarcadero.com/products/delphi). Si vous désirez les utiliser sur d'autres environnements des adaptations seront nécessaires. N'hésitez pas à nous faire part de vos besoins ou transmettre vos modifications sous forme de PULL REQUEST.
 
 Ce dépôt de code contient un projet développé en langage Pascal Objet sous Delphi. Vous ne savez pas ce qu'est Dephi ni où le télécharger ? Vous en saurez plus [sur ce site web](https://delphi-resources.developpeur-pascal.fr/).
 
 ## Présentations et conférences
-
-### XXX 2024
-
-* [talk title](talk url) (en anglais)
-* [talk title](talk url) (en français)
 
 ### Twitch
 
@@ -21,26 +24,17 @@ Suivez mes streams de développement de logiciels, jeux vidéo, applications mob
 
 ## Utiliser ce logiciel
 
-Ce logiciel est disponible dans une version de production directement installable ou exécutable. Il est distribué en shareware.
+Pour utiliser cette librairie et les programmes d'exemple vous devez avoir un serveur de licences CilTseg de test ou de production. Le serveur est disponible en hébergement ou à l'achat.
 
-Vous pouvez le télécharger et le rediffuser gratuitement à condition de ne pas en modifier le contenu (installeur, programme, fichiers annexes, ...).
-
-[Télécharger le programme ou son installeur](DDD) (WIP)
-
-Si vous utilisez régulièrement ce logiciel et en êtes satisfait vous êtes invité à en acheter une licence d'utilisateur final. L'achat d'une licence vous donnera accès aux mises à jour du logiciel en plus d'activer d'évenuelles fonctionnalités optionnelles.
-
-[Acheter une licence](FFF) (WIP)
-
-Vous pouvez aussi [consulter le site du logiciel](EEE) pour en savoir plus sur son fonctionnement, accéder à des vidéos et articles, connaître les différentes versions disponibles et leurs fonctionnalités, contacter le support utilisateurs...
+[Consultez le site de CilTseg](https://ciltseg.olfsoftware.fr/) pour en savoir plus sur son fonctionnement, accéder à des vidéos et articles, connaître les différentes versions disponibles et leurs fonctionnalités, contacter le support utilisateurs...
 
 ## Installation des codes sources
 
-Pour télécharger ce dépôt de code il est recommandé de passer par "git" mais vous pouvez aussi télécharger un ZIP directement depuis [son dépôt GitHub](https://github.com/DeveloppeurPascal/XXXXXXXXXX).
+Pour télécharger ce dépôt de code il est recommandé de passer par "git" mais vous pouvez aussi télécharger un ZIP directement depuis [son dépôt GitHub](https://github.com/DeveloppeurPascal/CilTseg4Delphi).
 
 Ce projet utilise des dépendances sous forme de sous modules. Ils seront absents du fichier ZIP. Vous devrez les télécharger à la main.
 
-* [YYY](ZZZ) doit être installé dans le sous dossier ./lib-externes/YYY
-* [YYY](ZZZ) doit être installé dans le sous dossier ./lib-externes/YYY
+* [DeveloppeurPascal/librairies](https://github.com/DeveloppeurPascal/librairies) doit être installé dans le sous dossier ./lib-externes/librairies
 
 ## Compatibilité
 
@@ -50,7 +44,7 @@ Normalement mes librairies et composants doivent aussi fonctionner au moins sur 
 
 Aucune garantie de compatibilité avec des versions antérieures n'est fournie même si je m'efforce de faire du code propre et ne pas trop utiliser les nouvelles façons d'écrire dedans (type inference, inline var et multilines strings).
 
-Si vous détectez des anomalies sur des versions antérieures n'hésitez pas à [les rapporter](https://github.com/DeveloppeurPascal/XXXXXXXXXX/issues) pour que je teste et tente de corriger ou fournir un contournement.
+Si vous détectez des anomalies sur des versions antérieures n'hésitez pas à [les rapporter](https://github.com/DeveloppeurPascal/CilTseg4Delphi/issues) pour que je teste et tente de corriger ou fournir un contournement.
 
 ## Licence d'utilisation de ce dépôt de code et de son contenu
 
@@ -69,7 +63,7 @@ Certains éléments inclus dans ce dépôt peuvent dépendre de droits d'utilisa
 
 ## Comment demander une nouvelle fonctionnalité, signaler un bogue ou une faille de sécurité ?
 
-Si vous voulez une réponse du propriétaire de ce dépôt la meilleure façon de procéder pour demander une nouvelle fonctionnalité ou signaler une anomalie est d'aller sur [le dépôt de code sur GitHub](https://github.com/DeveloppeurPascal/XXXXXXXXXX) et [d'ouvrir un ticket](https://github.com/DeveloppeurPascal/XXXXXXXXXX/issues).
+Si vous voulez une réponse du propriétaire de ce dépôt la meilleure façon de procéder pour demander une nouvelle fonctionnalité ou signaler une anomalie est d'aller sur [le dépôt de code sur GitHub](https://github.com/DeveloppeurPascal/CilTseg4Delphi) et [d'ouvrir un ticket](https://github.com/DeveloppeurPascal/CilTseg4Delphi/issues).
 
 Si vous avez trouvé une faille de sécurité n'en parlez pas en public avant qu'un correctif n'ait été déployé ou soit disponible. [Contactez l'auteur du dépôt en privé](https://developpeur-pascal.fr/nous-contacter.php) pour expliquer votre trouvaille.
 
