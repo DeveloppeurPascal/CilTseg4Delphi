@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{D6047837-387D-4248-9356-54B02A410467}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="DemoProject\DemoProject.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CommercialProject\CommercialProjectVCLSample.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="DemoProject">
+        <MSBuild Projects="DemoProject\DemoProject.dproj"/>
+    </Target>
+    <Target Name="DemoProject:Clean">
+        <MSBuild Projects="DemoProject\DemoProject.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="DemoProject:Make">
+        <MSBuild Projects="DemoProject\DemoProject.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CommercialProjectVCLSample">
+        <MSBuild Projects="CommercialProject\CommercialProjectVCLSample.dproj"/>
+    </Target>
+    <Target Name="CommercialProjectVCLSample:Clean">
+        <MSBuild Projects="CommercialProject\CommercialProjectVCLSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CommercialProjectVCLSample:Make">
+        <MSBuild Projects="CommercialProject\CommercialProjectVCLSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="DemoProject;CommercialProjectVCLSample"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="DemoProject:Clean;CommercialProjectVCLSample:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="DemoProject:Make;CommercialProjectVCLSample:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
