@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-10-23T19:57:48.000+02:00
-/// Signature : cae26c7a96d4db757a7af5a61413ba3d47be61e3
+/// File last update : 2024-10-26T19:00:28.000+02:00
+/// Signature : e100cc7484337b1c297a9b119655a4392967fbf5
 /// ***************************************************************************
 /// </summary>
 
@@ -205,6 +205,7 @@ function TCilTsegLastRelease.GetDownloadURL(const APlatform: string): string;
 begin
   if not FPlatforms.TryGetValue(APlatform, result) then
     result := '';
+    // TODO : ajouter une recherche case insensitive
 end;
 
 function TCilTsegLastRelease.GetPlatforms: TStringDynArray;
