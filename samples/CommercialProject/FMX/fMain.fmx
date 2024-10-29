@@ -1,0 +1,43 @@
+object frmMain: TfrmMain
+  Left = 0
+  Top = 0
+  Caption = 'FMX Demo Project'
+  ClientHeight = 480
+  ClientWidth = 640
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnShow = FormShow
+  DesignerMasterStyle = 0
+  object MainMenu1: TMainMenu
+    Left = 304
+    Top = 224
+    object Fichier1: TMenuItem
+      Text = 'Fichier'
+      object mnuQuit: TMenuItem
+        Locked = True
+        Text = 'Quitter'
+        OnClick = mnuQuitClick
+      end
+    end
+    object Aide1: TMenuItem
+      Text = 'Aide'
+      object mnuSearchNewRelease: TMenuItem
+        Locked = True
+        Text = 'Mettre '#224' jour ce logiciel'
+        OnClick = mnuSearchNewReleaseClick
+      end
+      object mnuRegisterTheLicense: TMenuItem
+        Locked = True
+        Text = 'Enregistrer le logiciel'
+        OnClick = mnuRegisterTheLicenseClick
+      end
+      object mnuBuyALicense: TMenuItem
+        Locked = True
+        Text = 'Acheter une licence'
+        OnClick = mnuBuyALicenseClick
+      end
+    end
+  end
+end
