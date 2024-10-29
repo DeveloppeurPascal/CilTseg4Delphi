@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-10-26T21:13:24.000+02:00
-/// Signature : 6dba1f157ad5d7922719707d436570198e4b9636
+/// File last update : 2024-10-29T19:51:20.000+01:00
+/// Signature : 66d8389bc0cd7d5244b96617fcde51765e8c3c99
 /// ***************************************************************************
 /// </summary>
 
@@ -123,7 +123,7 @@ begin
     ini := TIniFile.Create(tpath.Combine(tpath.GetDocumentsPath,
       'CilTsegSamples.lic'));
     try
-      section := '[' + tpath.GetFileNameWithoutExtension(paramstr(0)) + ']';
+      section := tpath.GetFileNameWithoutExtension(paramstr(0));
       FLicenseEmail := ini.ReadString(section, 'le', '');
       FLicenseDeviceName := ini.ReadString(section, 'ldn', getDeviceName);
       FLicenseActivationNumber := ini.ReadString(section, 'lan', '');
@@ -143,7 +143,7 @@ begin
   ini := TIniFile.Create(tpath.Combine(tpath.GetDocumentsPath,
     'CilTsegSamples.lic'));
   try
-    section := '[' + tpath.GetFileNameWithoutExtension(paramstr(0)) + ']';
+    section := tpath.GetFileNameWithoutExtension(paramstr(0));
     ini.WriteString(section, 'le', FLicenseEmail);
     ini.WriteString(section, 'ldn', FLicenseDeviceName);
     ini.WriteString(section, 'lan', FLicenseActivationNumber);
