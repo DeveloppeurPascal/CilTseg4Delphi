@@ -1,0 +1,136 @@
+object frmCilTsegRegisterOrShowLicense: TfrmCilTsegRegisterOrShowLicense
+  Left = 0
+  Top = 0
+  BorderStyle = Single
+  Caption = 'License registration'
+  ClientHeight = 170
+  ClientWidth = 400
+  Position = OwnerFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object pnlRegisterLicense: TLayout
+    Align = Client
+    Size.Width = 400.000000000000000000
+    Size.Height = 170.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object lblUserEmail: TLabel
+      Align = Top
+      FocusControl = edtUserEmail
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 380.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Your email'
+      TabOrder = 0
+    end
+    object edtUserEmail: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 1
+      Position.X = 10.000000000000000000
+      Position.Y = 32.000000000000000000
+      Margins.Left = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 380.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object lblLicenseNumber: TLabel
+      Align = Top
+      FocusControl = edtLicenseNumber
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 5.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 74.000000000000000000
+      Size.Width = 380.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Your license number'
+      TabOrder = 2
+    end
+    object edtLicenseNumber: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      Align = Top
+      TabOrder = 3
+      Position.X = 10.000000000000000000
+      Position.Y = 96.000000000000000000
+      Margins.Left = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Size.Width = 380.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object btnBuy: TButton
+      Anchors = [akRight, akBottom]
+      Position.X = 216.000000000000000000
+      Position.Y = 140.000000000000000000
+      TabOrder = 5
+      Text = 'Buy'
+      TextSettings.Trimming = None
+      OnClick = btnBuyClick
+    end
+    object btnRegister: TButton
+      Anchors = [akRight, akBottom]
+      Position.X = 120.000000000000000000
+      Position.Y = 140.000000000000000000
+      TabOrder = 4
+      Text = 'Register'
+      TextSettings.Trimming = None
+      OnClick = btnRegisterClick
+    end
+    object btnCancel: TButton
+      Anchors = [akRight, akBottom]
+      Position.X = 312.000000000000000000
+      Position.Y = 140.000000000000000000
+      TabOrder = 6
+      Text = 'Cancel'
+      TextSettings.Trimming = None
+      OnClick = btnCancelClick
+    end
+  end
+  object pnlShowLicenseDetails: TLayout
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 1
+    object lblShow: TLabel
+      Align = Top
+      AutoSize = True
+      Margins.Left = 10.000000000000000000
+      Margins.Top = 10.000000000000000000
+      Margins.Right = 10.000000000000000000
+      Margins.Bottom = 10.000000000000000000
+      Position.X = 10.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 620.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'lblShow'
+      TabOrder = 0
+    end
+    object btnClose: TButton
+      Anchors = [akRight, akBottom]
+      Position.X = 552.000000000000000000
+      Position.Y = 450.000000000000000000
+      TabOrder = 1
+      Text = 'Close'
+      TextSettings.Trimming = None
+      OnClick = btnCloseClick
+    end
+  end
+end
