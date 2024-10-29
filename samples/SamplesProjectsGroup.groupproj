@@ -1,12 +1,15 @@
 ﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
-        <ProjectGuid>{D6047837-387D-4248-9356-54B02A410467}</ProjectGuid>
+        <ProjectGuid>{27AF0EE8-6771-4CD0-9D19-414311484F15}</ProjectGuid>
     </PropertyGroup>
     <ItemGroup>
         <Projects Include="DemoProject\DemoProject.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="CommercialProject\CommercialProjectVCLSample.dproj">
+        <Projects Include="CommercialProject\VCL\CommercialProjectVCLSample.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CommercialProject\FMX\CommercialProjectFMXSample.dproj">
             <Dependencies/>
         </Projects>
     </ItemGroup>
@@ -27,22 +30,31 @@
         <MSBuild Projects="DemoProject\DemoProject.dproj" Targets="Make"/>
     </Target>
     <Target Name="CommercialProjectVCLSample">
-        <MSBuild Projects="CommercialProject\CommercialProjectVCLSample.dproj"/>
+        <MSBuild Projects="CommercialProject\VCL\CommercialProjectVCLSample.dproj"/>
     </Target>
     <Target Name="CommercialProjectVCLSample:Clean">
-        <MSBuild Projects="CommercialProject\CommercialProjectVCLSample.dproj" Targets="Clean"/>
+        <MSBuild Projects="CommercialProject\VCL\CommercialProjectVCLSample.dproj" Targets="Clean"/>
     </Target>
     <Target Name="CommercialProjectVCLSample:Make">
-        <MSBuild Projects="CommercialProject\CommercialProjectVCLSample.dproj" Targets="Make"/>
+        <MSBuild Projects="CommercialProject\VCL\CommercialProjectVCLSample.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CommercialProjectFMXSample">
+        <MSBuild Projects="CommercialProject\FMX\CommercialProjectFMXSample.dproj"/>
+    </Target>
+    <Target Name="CommercialProjectFMXSample:Clean">
+        <MSBuild Projects="CommercialProject\FMX\CommercialProjectFMXSample.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CommercialProjectFMXSample:Make">
+        <MSBuild Projects="CommercialProject\FMX\CommercialProjectFMXSample.dproj" Targets="Make"/>
     </Target>
     <Target Name="Build">
-        <CallTarget Targets="DemoProject;CommercialProjectVCLSample"/>
+        <CallTarget Targets="DemoProject;CommercialProjectVCLSample;CommercialProjectFMXSample"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="DemoProject:Clean;CommercialProjectVCLSample:Clean"/>
+        <CallTarget Targets="DemoProject:Clean;CommercialProjectVCLSample:Clean;CommercialProjectFMXSample:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="DemoProject:Make;CommercialProjectVCLSample:Make"/>
+        <CallTarget Targets="DemoProject:Make;CommercialProjectVCLSample:Make;CommercialProjectFMXSample:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
