@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-10-26T21:09:38.000+02:00
-/// Signature : 16ce2be735823e30f9c08e067b8584732576fcf2
+/// File last update : 2024-10-29T20:02:48.000+01:00
+/// Signature : 1527a5dfe1c17bac08f7b963c984e7c718e2f32d
 /// ***************************************************************************
 /// </summary>
 
@@ -72,9 +72,6 @@ type
   private
   public
   end;
-
-var
-  frmCilTsegRegisterOrShowLicense: TfrmCilTsegRegisterOrShowLicense;
 
 implementation
 
@@ -158,13 +155,21 @@ begin
   pnlShowLicenseDetails.Visible := not pnlRegisterLicense.Visible;
 
   if pnlRegisterLicense.Visible then
-  begin
-  end;
+    tthread.forcequeue(nil,
+      procedure
+      begin
+        edtUserEmail.SetFocus;
+      end);
 
   if pnlShowLicenseDetails.Visible then
   begin
     lblShow.Caption := 'The software has been registered on this computer by ' +
       tconfig.Current.LicenseEmail + '.';
+    tthread.forcequeue(nil,
+      procedure
+      begin
+        btnClose.SetFocus;
+      end);
   end;
 end;
 
