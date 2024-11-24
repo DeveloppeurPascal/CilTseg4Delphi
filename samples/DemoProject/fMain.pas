@@ -119,9 +119,9 @@ var
   CilTsegAPI: TCilTsegClientLib;
   Result: TCilTsegLicenseActivation;
 begin
-  if edtLicenseNumber.Text.IsEmpty then
+  if edtLicenseNumber2.Text.IsEmpty then
   begin
-    edtLicenseNumber.SetFocus;
+    edtLicenseNumber2.SetFocus;
     raise Exception.Create('A license number is needed !');
   end;
   CilTsegAPI := TCilTsegClientLib.Create(edtAPIServerURL.Text,
@@ -225,9 +225,9 @@ var
   CilTsegAPI: TCilTsegClientLib;
   Result: TCilTsegLicenseActivation;
 begin
-  if edtLicenseNumber.Text.IsEmpty then
+  if edtLicenseNumber3.Text.IsEmpty then
   begin
-    edtLicenseNumber.SetFocus;
+    edtLicenseNumber3.SetFocus;
     raise Exception.Create('A license number is needed !');
   end;
   CilTsegAPI := TCilTsegClientLib.Create(edtAPIServerURL.Text,
