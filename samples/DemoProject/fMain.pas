@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-10-23T19:58:28.000+02:00
-/// Signature : 80a69e9020d92e7c1c6e1eded2e7f7fb51857127
+/// File last update : 2024-11-24T15:09:20.000+01:00
+/// Signature : 8b6c2d37c9f8b802d32eb8cc5a9db712c14b51f0
 /// ***************************************************************************
 /// </summary>
 
@@ -133,8 +133,10 @@ begin
       if Result.Error then
         ShowMessage('API Error')
       else
-        ShowMessage(Result.LicenseNumber + sLineBreak +
-          Result.ActivationNumber);
+        ShowMessage(Result.LicenseNumber + sLineBreak + Result.ActivationNumber
+          + sLineBreak + DateToStr(Result.First_Activation) + sLineBreak +
+          DateToStr(Result.End_Of_License) + sLineBreak +
+          DateToStr(Result.End_Of_Maintenance));
       edtLicenseNumber3.Text := Result.LicenseNumber;
       edtActivationNumber.Text := Result.ActivationNumber;
     finally
@@ -196,7 +198,10 @@ begin
       if Result.Error then
         ShowMessage('API Error')
       else
-        ShowMessage(Result.LicenseNumber + sLineBreak + DateToStr(Result.Date));
+        ShowMessage(Result.LicenseNumber + sLineBreak +
+          DateToStr(Result.First_Activation) + sLineBreak +
+          DateToStr(Result.End_Of_License) + sLineBreak +
+          DateToStr(Result.End_Of_Maintenance));
       edtLicenseNumber2.Text := Result.LicenseNumber;
     finally
       Result.free;
