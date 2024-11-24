@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-10-26T19:00:28.000+02:00
-/// Signature : e100cc7484337b1c297a9b119655a4392967fbf5
+/// File last update : 2024-11-24T15:06:40.000+01:00
+/// Signature : 900267355a873dfb77e42e5585224d5e3e512c46
 /// ***************************************************************************
 /// </summary>
 
@@ -56,14 +56,22 @@ type
 
   TCilTsegLicenseInfo = class(TCilTsegData)
   private
-    FDate: TDate;
     FLicenseNumber: string;
-    procedure SetDate(const Value: TDate);
+    FEnd_Of_Maintenance: TDate;
+    FEnd_Of_License: TDate;
+    FFirst_Activation: TDate;
     procedure SetLicenseNumber(const Value: string);
+    procedure SetEnd_Of_License(const Value: TDate);
+    procedure SetEnd_Of_Maintenance(const Value: TDate);
+    procedure SetFirst_Activation(const Value: TDate);
   protected
   public
     property LicenseNumber: string read FLicenseNumber write SetLicenseNumber;
-    property Date: TDate read FDate write SetDate;
+    property First_Activation: TDate read FFirst_Activation
+      write SetFirst_Activation;
+    property End_Of_License: TDate read FEnd_Of_License write SetEnd_Of_License;
+    property End_Of_Maintenance: TDate read FEnd_Of_Maintenance
+      write SetEnd_Of_Maintenance;
     constructor Create; override;
   end;
 
@@ -99,13 +107,24 @@ type
   private
     FActivationNumber: string;
     FLicenseNumber: string;
+    FFirst_Activation: TDate;
+    FEnd_Of_Maintenance: TDate;
+    FEnd_Of_License: TDate;
     procedure SetActivationNumber(const Value: string);
     procedure SetLicenseNumber(const Value: string);
+    procedure SetEnd_Of_License(const Value: TDate);
+    procedure SetEnd_Of_Maintenance(const Value: TDate);
+    procedure SetFirst_Activation(const Value: TDate);
   protected
   public
     property LicenseNumber: string read FLicenseNumber write SetLicenseNumber;
     property ActivationNumber: string read FActivationNumber
       write SetActivationNumber;
+    property First_Activation: TDate read FFirst_Activation
+      write SetFirst_Activation;
+    property End_Of_License: TDate read FEnd_Of_License write SetEnd_Of_License;
+    property End_Of_Maintenance: TDate read FEnd_Of_Maintenance
+      write SetEnd_Of_Maintenance;
     constructor Create; override;
   end;
 
@@ -163,13 +182,25 @@ end;
 constructor TCilTsegLicenseInfo.Create;
 begin
   inherited;
-  FDate := now;
+  FFirst_Activation := now;
+  FEnd_Of_Maintenance := now;
+  FEnd_Of_License := now;
   FLicenseNumber := '';
 end;
 
-procedure TCilTsegLicenseInfo.SetDate(const Value: TDate);
+procedure TCilTsegLicenseInfo.SetEnd_Of_License(const Value: TDate);
 begin
-  FDate := Value;
+  FEnd_Of_License := Value;
+end;
+
+procedure TCilTsegLicenseInfo.SetEnd_Of_Maintenance(const Value: TDate);
+begin
+  FEnd_Of_Maintenance := Value;
+end;
+
+procedure TCilTsegLicenseInfo.SetFirst_Activation(const Value: TDate);
+begin
+  FFirst_Activation := Value;
 end;
 
 procedure TCilTsegLicenseInfo.SetLicenseNumber(const Value: string);
@@ -205,7 +236,7 @@ function TCilTsegLastRelease.GetDownloadURL(const APlatform: string): string;
 begin
   if not FPlatforms.TryGetValue(APlatform, result) then
     result := '';
-    // TODO : ajouter une recherche case insensitive
+  // TODO : ajouter une recherche case insensitive
 end;
 
 function TCilTsegLastRelease.GetPlatforms: TStringDynArray;
@@ -249,11 +280,29 @@ begin
   inherited;
   FLicenseNumber := '';
   FActivationNumber := '';
+  FFirst_Activation := now;
+  FEnd_Of_Maintenance := now;
+  FEnd_Of_License := now;
 end;
 
 procedure TCilTsegLicenseActivation.SetActivationNumber(const Value: string);
 begin
   FActivationNumber := Value;
+end;
+
+procedure TCilTsegLicenseActivation.SetEnd_Of_License(const Value: TDate);
+begin
+  FEnd_Of_License := Value;
+end;
+
+procedure TCilTsegLicenseActivation.SetEnd_Of_Maintenance(const Value: TDate);
+begin
+  FEnd_Of_Maintenance := Value;
+end;
+
+procedure TCilTsegLicenseActivation.SetFirst_Activation(const Value: TDate);
+begin
+  FFirst_Activation := Value;
 end;
 
 procedure TCilTsegLicenseActivation.SetLicenseNumber(const Value: string);
@@ -376,7 +425,11 @@ begin
           if jso.TryGetValue<string>('license', s) then
             result.LicenseNumber := s;
           if jso.TryGetValue<string>('date', s) then
-            result.Date := ISO8601ToDate(s);
+            result.First_Activation := ISO8601ToDate(s);
+          if jso.TryGetValue<string>('end_of_license', s) then
+            result.End_Of_License := ISO8601ToDate(s);
+          if jso.TryGetValue<string>('end_of_maintenance', s) then
+            result.End_Of_Maintenance := ISO8601ToDate(s);
         end;
       finally
         jso.Free;
@@ -482,6 +535,12 @@ begin
             result.LicenseNumber := s;
           if jso.TryGetValue<string>('activation', s) then
             result.ActivationNumber := s;
+          if jso.TryGetValue<string>('first_activation', s) then
+            result.First_Activation := ISO8601ToDate(s);
+          if jso.TryGetValue<string>('end_of_license', s) then
+            result.End_Of_License := ISO8601ToDate(s);
+          if jso.TryGetValue<string>('end_of_maintenance', s) then
+            result.End_Of_Maintenance := ISO8601ToDate(s);
         end;
       finally
         jso.Free;
