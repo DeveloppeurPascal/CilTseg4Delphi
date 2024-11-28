@@ -61,7 +61,7 @@ type
     /// </summary>
     property LicenseEmail: string read FLicenseEmail write SetLicenseEmail;
     /// <summary>
-    /// Activatio number, given by the server if the license has been activated
+    /// Activation number, given by the server if the license has been activated
     /// </summary>
     property LicenseActivationNumber: string read FLicenseActivationNumber
       write SetLicenseActivationNumber;
