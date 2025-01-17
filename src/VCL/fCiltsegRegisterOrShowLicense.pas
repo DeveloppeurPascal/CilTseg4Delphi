@@ -3,7 +3,7 @@
 ///
 /// CliTseg API client for Delphi
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-10-29T20:02:48.000+01:00
-/// Signature : 1527a5dfe1c17bac08f7b963c984e7c718e2f32d
+/// File last update : 2025-01-17T18:52:36.000+01:00
+/// Signature : bdc71f322ab22bbafeda188486ce327e4b8fc217
 /// ***************************************************************************
 /// </summary>
 
@@ -70,7 +70,11 @@ type
     procedure btnBuyClick(Sender: TObject);
     procedure btnRegisterClick(Sender: TObject);
   private
+    class var HasInstance: byte;
+  protected
   public
+    constructor Create(AOwner: TComponent); override;
+    destructor Destroy; override;
   end;
 
 implementation
@@ -148,6 +152,25 @@ begin
   end;
 end;
 
+constructor TfrmCilTsegRegisterOrShowLicense.Create(AOwner: TComponent);
+begin
+  inc(HasInstance);
+  if (HasInstance > 1) then
+{$IFDEF DEBUG}
+    raise Exception.Create
+      ('Use previous instance of this form, don''t create a new one.');
+{$ELSE}
+    abort;
+{$ENDIF}
+  inherited;
+end;
+
+destructor TfrmCilTsegRegisterOrShowLicense.Destroy;
+begin
+  inherited;
+  dec(HasInstance);
+end;
+
 procedure TfrmCilTsegRegisterOrShowLicense.FormCreate(Sender: TObject);
 begin
   pnlRegisterLicense.Visible := tconfig.Current.LicenseNumber.IsEmpty or
@@ -172,5 +195,9 @@ begin
       end);
   end;
 end;
+
+initialization
+
+TfrmCilTsegRegisterOrShowLicense.HasInstance := 0;
 
 end.
