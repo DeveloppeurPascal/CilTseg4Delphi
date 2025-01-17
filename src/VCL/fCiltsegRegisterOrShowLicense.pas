@@ -75,6 +75,7 @@ type
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
+    class function Execute(AOwner: TComponent): boolean;
   end;
 
 implementation
@@ -169,6 +170,24 @@ destructor TfrmCilTsegRegisterOrShowLicense.Destroy;
 begin
   inherited;
   dec(HasInstance);
+end;
+
+class function TfrmCilTsegRegisterOrShowLicense.Execute
+  (AOwner: TComponent): boolean;
+var
+  f: TfrmCilTsegRegisterOrShowLicense;
+begin
+  f := TfrmCilTsegRegisterOrShowLicense.Create(AOwner);
+  try
+    try
+      f.ShowModal;
+      Result := true;
+    finally
+      f.free;
+    end;
+  except
+    Result := false;
+  end;
 end;
 
 procedure TfrmCilTsegRegisterOrShowLicense.FormCreate(Sender: TObject);
