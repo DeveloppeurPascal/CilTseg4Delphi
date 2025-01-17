@@ -3,7 +3,7 @@
 ///
 /// CliTseg API client for Delphi
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-10-29T19:54:32.000+01:00
-/// Signature : fc1fa17b1e67a67fa20e9e5b2dd484e845945fd2
+/// File last update : 2025-01-17T19:20:16.000+01:00
+/// Signature : b38a20ceaf34e44dd70bbd2e5af314dfa918e6e4
 /// ***************************************************************************
 /// </summary>
 
@@ -172,16 +172,9 @@ begin
 end;
 
 procedure TfrmMain.ShowCilTsegRegistrationForm;
-var
-  f: TfrmCilTsegRegisterOrShowLicense;
 begin
-  f := TfrmCilTsegRegisterOrShowLicense.Create(self);
-  try
-    f.ShowModal;
-  finally
-    f.free;
-  end;
-  CheckAndAskTheLicense;
+  if TfrmCilTsegRegisterOrShowLicense.Execute(self) then
+    CheckAndAskTheLicense;
 end;
 
 end.
