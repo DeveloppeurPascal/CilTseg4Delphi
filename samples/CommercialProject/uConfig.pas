@@ -1,9 +1,9 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// CliTseg API client for Delphi
+/// CilTseg API client for Delphi
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-10-29T19:51:20.000+01:00
-/// Signature : 66d8389bc0cd7d5244b96617fcde51765e8c3c99
+/// File last update : 2025-02-05T20:58:58.852+01:00
+/// Signature : 40c77714f5e88bdd61b0cdae3dafb5c0a96f1f5e
 /// ***************************************************************************
 /// </summary>
 
