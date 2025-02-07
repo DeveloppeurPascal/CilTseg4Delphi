@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Olf.CilTseg.ClientLib: Class TCilTsegLastRelease</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.16.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<div class="container"><div class="navigation">
+<ul><li><a href="AllUnits.html">Units</a></li><li><a href="ClassHierarchy.html">Class Hierarchy</a></li><li><a href="AllClasses.html">Classes, Interfaces, Objects and Records</a></li><li><a href="AllTypes.html">Types</a></li><li><a href="AllVariables.html">Variables</a></li><li><a href="AllConstants.html">Constants</a></li><li><a href="AllFunctions.html">Functions and Procedures</a></li><li><a href="AllIdentifiers.html">Identifiers</a></li></ul></div><div class="content">
+<span id="TCilTsegLastRelease"></span><h1 class="cio">Class TCilTsegLastRelease</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section"><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></div><div class="one_section"><a class="section" href="#PasDoc-NestedTypes">Nested Types</a></div><div class="one_section"><a class="section" href="#PasDoc-Fields">Fields</a></div><div class="one_section"><a class="section" href="#PasDoc-Methods">Methods</a></div><div class="one_section"><a class="section" href="#PasDoc-Properties">Properties</a></div></div>
+<span id="PasDoc-Description"></span><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a href="Olf.CilTseg.ClientLib.html">Olf.CilTseg.ClientLib</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type TCilTsegLastRelease = class(<a class="normal" href="Olf.CilTseg.ClientLib.TCilTsegData.html">TCilTsegData</a>)</code></p>
+<h2 class="description">Description</h2>
+<div class="nodescription">No description available, ancestor TCilTsegData description follows</div><span id="PasDoc-Hierarchy"></span><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="ancestor"><a class="normal" href="Olf.CilTseg.ClientLib.TCilTsegData.html">TCilTsegData</a></li>
+<li class="thisitem">TCilTsegLastRelease</li></ul><h2 class="overview">Overview</h2>
+<span id="PasDoc-NestedTypes"></span><h3 class="summary">Nested Types</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><code><strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#TPlatforms">TPlatforms</a></strong> = TDictionary&lt;string, string&gt;;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Fields"></span><h3 class="summary">Fields</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><code>var <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#FPlatforms">FPlatforms</a></strong>: <a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#TPlatforms">TPlatforms</a>;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Methods"></span><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#GetPlatforms">GetPlatforms</a></strong>: TStringDynArray;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#GetDownloadURL">GetDownloadURL</a></strong>(const APlatform: string): string;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#AddPlatform">AddPlatform</a></strong>(const APlatform, ADownloadURL: string);</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#Create">Create</a></strong>; Override;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>destructor <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#Destroy">Destroy</a></strong>; override;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Properties"></span><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#SoftwareLabel">SoftwareLabel</a></strong>: string read FSoftwareLabel write SetSoftwareLabel;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#SoftwareURL">SoftwareURL</a></strong>: string read FSoftwareURL write SetSoftwareURL;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#ReleaseVersion">ReleaseVersion</a></strong>: string read FReleaseVersion
+      write SetReleaseVersion;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#ReleaseDate">ReleaseDate</a></strong>: TDate read FReleaseDate write SetReleaseDate;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Nested Types</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><span id="TPlatforms"></span><code><strong>TPlatforms</strong> = TDictionary&lt;string, string&gt;;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Fields</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><span id="FPlatforms"></span><code>var <strong>FPlatforms</strong>: <a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#TPlatforms">TPlatforms</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="GetPlatforms"></span><code>function <strong>GetPlatforms</strong>: TStringDynArray;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="GetDownloadURL"></span><code>function <strong>GetDownloadURL</strong>(const APlatform: string): string;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="AddPlatform"></span><code>procedure <strong>AddPlatform</strong>(const APlatform, ADownloadURL: string);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Create"></span><code>constructor <strong>Create</strong>; Override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Destroy"></span><code>destructor <strong>Destroy</strong>; override;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="SoftwareLabel"></span><code>property <strong>SoftwareLabel</strong>: string read FSoftwareLabel write SetSoftwareLabel;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="SoftwareURL"></span><code>property <strong>SoftwareURL</strong>: string read FSoftwareURL write SetSoftwareURL;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="ReleaseVersion"></span><code>property <strong>ReleaseVersion</strong>: string read FReleaseVersion
+      write SetReleaseVersion;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="ReleaseDate"></span><code>property <strong>ReleaseDate</strong>: TDate read FReleaseDate write SetReleaseDate;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<a href="https://ciltseg4delphi.developpeur-pascal.fr/" target="_blank">CilTseg for Delphi</a> (c) 2024-2025 <a href="https://patrick.premartin.fr" target="_blank">Patrick PREMARTIN</a> - Powered by <a href="https://pasdoc.github.io/" target="_blank">PasDoc</a>
+<hr><span class="appinfo"><em>Generated by <a href="https://pasdoc.github.io/">PasDoc 0.16.0</a>. </em>
+</span>
+</div></div></body></html>

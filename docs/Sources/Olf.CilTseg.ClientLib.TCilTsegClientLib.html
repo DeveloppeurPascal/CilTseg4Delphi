@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Olf.CilTseg.ClientLib: Class TCilTsegClientLib</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="generator" content="PasDoc 0.16.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link rel="StyleSheet" type="text/css" href="pasdoc.css">
+</head>
+<body>
+<div class="container"><div class="navigation">
+<ul><li><a href="AllUnits.html">Units</a></li><li><a href="ClassHierarchy.html">Class Hierarchy</a></li><li><a href="AllClasses.html">Classes, Interfaces, Objects and Records</a></li><li><a href="AllTypes.html">Types</a></li><li><a href="AllVariables.html">Variables</a></li><li><a href="AllConstants.html">Constants</a></li><li><a href="AllFunctions.html">Functions and Procedures</a></li><li><a href="AllIdentifiers.html">Identifiers</a></li></ul></div><div class="content">
+<span id="TCilTsegClientLib"></span><h1 class="cio">Class TCilTsegClientLib</h1>
+<div class="sections">
+<div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section"><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></div><div class="one_section">Fields</div><div class="one_section"><a class="section" href="#PasDoc-Methods">Methods</a></div><div class="one_section"><a class="section" href="#PasDoc-Properties">Properties</a></div></div>
+<span id="PasDoc-Description"></span><h2 class="unit">Unit</h2>
+<p class="unitlink">
+<a href="Olf.CilTseg.ClientLib.html">Olf.CilTseg.ClientLib</a></p>
+<h2 class="declaration">Declaration</h2>
+<p class="declaration">
+<code>type TCilTsegClientLib = class(TObject)</code></p>
+<h2 class="description">Description</h2>
+<span id="PasDoc-Hierarchy"></span><h2 class="hierarchy">Hierarchy</h2>
+<ul class="hierarchy"><li class="ancestor">TObject</li>
+<li class="thisitem">TCilTsegClientLib</li></ul><h2 class="overview">Overview</h2>
+<span id="PasDoc-Methods"></span><h3 class="summary">Methods</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="Olf.CilTseg.ClientLib.TCilTsegClientLib.html#CheckSettings">CheckSettings</a></strong>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>constructor <strong><a href="Olf.CilTseg.ClientLib.TCilTsegClientLib.html#Create">Create</a></strong>(const AServerURL: string; const ASoftwareID: integer; const ASoftwareToken: string);</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegClientLib.html#GetLicenseInfo">GetLicenseInfo</a></strong>(const ALicenseNumber: string): <a href="Olf.CilTseg.ClientLib.TCilTsegLicenseInfo.html">TCilTsegLicenseInfo</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegClientLib.html#GetSoftwareLastRelease">GetSoftwareLastRelease</a></strong>: <a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html">TCilTsegLastRelease</a>;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegClientLib.html#LicenseActivation">LicenseActivation</a></strong>(const ALicenseNumber, AUserEmail, ADeviceName: string): <a href="Olf.CilTseg.ClientLib.TCilTsegLicenseActivation.html">TCilTsegLicenseActivation</a>;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegClientLib.html#CheckLicenseActivation">CheckLicenseActivation</a></strong>(const ALicenseNumber, AUserEmail, ADeviceName, AActivationNumber: string): <a href="Olf.CilTseg.ClientLib.TCilTsegLicenseActivation.html">TCilTsegLicenseActivation</a>;</code></td>
+</tr>
+</table>
+<span id="PasDoc-Properties"></span><h3 class="summary">Properties</h3>
+<table class="summary wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <strong><a href="Olf.CilTseg.ClientLib.TCilTsegClientLib.html#ServerURL">ServerURL</a></strong>: string read FServerURL write SetServerURL;</code></td>
+</tr>
+<tr class="list2">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <strong><a href="Olf.CilTseg.ClientLib.TCilTsegClientLib.html#SoftwareID">SoftwareID</a></strong>: integer read FSoftwareID write SetSoftwareID;</code></td>
+</tr>
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><code>property <strong><a href="Olf.CilTseg.ClientLib.TCilTsegClientLib.html#SoftwareToken">SoftwareToken</a></strong>: string read FSoftwareToken write SetSoftwareToken;</code></td>
+</tr>
+</table>
+<h2 class="description">Description</h2>
+<h3 class="detail">Methods</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><span id="CheckSettings"></span><code>procedure <strong>CheckSettings</strong>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="Create"></span><code>constructor <strong>Create</strong>(const AServerURL: string; const ASoftwareID: integer; const ASoftwareToken: string);</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="GetLicenseInfo"></span><code>function <strong>GetLicenseInfo</strong>(const ALicenseNumber: string): <a href="Olf.CilTseg.ClientLib.TCilTsegLicenseInfo.html">TCilTsegLicenseInfo</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="GetSoftwareLastRelease"></span><code>function <strong>GetSoftwareLastRelease</strong>: <a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html">TCilTsegLastRelease</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="LicenseActivation"></span><code>function <strong>LicenseActivation</strong>(const ALicenseNumber, AUserEmail, ADeviceName: string): <a href="Olf.CilTseg.ClientLib.TCilTsegLicenseActivation.html">TCilTsegLicenseActivation</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="CheckLicenseActivation"></span><code>function <strong>CheckLicenseActivation</strong>(const ALicenseNumber, AUserEmail, ADeviceName, AActivationNumber: string): <a href="Olf.CilTseg.ClientLib.TCilTsegLicenseActivation.html">TCilTsegLicenseActivation</a>;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<h3 class="detail">Properties</h3>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="ServerURL"></span><code>property <strong>ServerURL</strong>: string read FServerURL write SetServerURL;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="SoftwareID"></span><code>property <strong>SoftwareID</strong>: integer read FSoftwareID write SetSoftwareID;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="SoftwareToken"></span><code>property <strong>SoftwareToken</strong>: string read FSoftwareToken write SetSoftwareToken;</code></td>
+</tr>
+<tr><td colspan="2">
+&nbsp;</td></tr>
+</table>
+<a href="https://ciltseg4delphi.developpeur-pascal.fr/" target="_blank">CilTseg for Delphi</a> (c) 2024-2025 <a href="https://patrick.premartin.fr" target="_blank">Patrick PREMARTIN</a> - Powered by <a href="https://pasdoc.github.io/" target="_blank">PasDoc</a>
+<hr><span class="appinfo"><em>Generated by <a href="https://pasdoc.github.io/">PasDoc 0.16.0</a>. </em>
+</span>
+</div></div></body></html>
