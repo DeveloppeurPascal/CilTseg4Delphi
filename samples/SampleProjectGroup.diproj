@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project Version="1.0">
+  <Title>CilTseg API client for Delphi</Title>
+  <Summary>Delphi client library for the licenses manager CilTseg.</Summary>
+  <Author>Patrick PREMARTIN</Author>
+  <Email>patrick@premartin.fr</Email>
+  <Copyright>(c) 2024-2025 Patrick PREMARTIN</Copyright>
+  <Comment/>
+  <Language>1036</Language>
+  <Charset>1</Charset>
+  <HeaderHtml>&lt;%TopicTitle%&gt;</HeaderHtml>
+  <FooterHtml>&lt;a href="https://ciltseg4delphi.developpeur-pascal.fr/" target="_blank"&gt;CilTseg API client for Delphi&lt;/a&gt; (c) 2024-2025 &lt;a href="https://patrick.premartin.fr" target="_blank"&gt;Patrick PREMARTIN&lt;/a&gt; - Powered by &lt;a href="https://devjetsoftware.com/products/documentation-insight/" target="_blank"&gt;DocInsight&lt;/a&gt;</FooterHtml>
+  <CustomDefines/>
+  <ShowImplementationSection>false</ShowImplementationSection>
+  <ShowPrivateMembers>false</ShowPrivateMembers>
+  <ShowProtectedMembers>true</ShowProtectedMembers>
+  <ShowInheritedMembers>true</ShowInheritedMembers>
+  <ShowPropertyAccessors>true</ShowPropertyAccessors>
+  <FileNamePolicy>0</FileNamePolicy>
+  <CompilerVersion>27</CompilerVersion>
+  <TargetPlatform>0</TargetPlatform>
+  <Sources>
+    <Source>.\DemoProject\DemoProject.dpr</Source>
+    <Source>.\CommercialProject\VCL\CommercialProjectVCLSample.dpr</Source>
+    <Source>.\CommercialProject\FMX\CommercialProjectFMXSample.dpr</Source>
+  </Sources>
+  <Outputs>
+    <Output Type="HTML">
+      <Active>true</Active>
+      <OutputDirectory>..\docs\Samples</OutputDirectory>
+    </Output>
+    <Output Type="CHM">
+      <Active>true</Active>
+      <OutputFileName>.\CilTsegAPIClientForDelphi.chm</OutputFileName>
+    </Output>
+    <Output Type="MSHELP2">
+      <Active>false</Active>
+      <OutputFileName>build\docs\mshelp2\SamplesProjectsGroup.HxS</OutputFileName>
+      <Namespace>SamplesProjectsGroup</Namespace>
+      <TitleID>library</TitleID>
+    </Output>
+    <Output Type="HelpAndManual">
+      <Active>false</Active>
+      <OutputFileName>build\docs\hm\SamplesProjectsGroup.hmxp</OutputFileName>
+    </Output>
+  </Outputs>
+</Project>
