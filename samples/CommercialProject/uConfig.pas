@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2025-02-05T20:58:58.852+01:00
-/// Signature : 40c77714f5e88bdd61b0cdae3dafb5c0a96f1f5e
+/// File last update : 2025-02-24T20:06:24.000+01:00
+/// Signature : bd975a95136b504786d0612d673a2ded5a94921f
 /// ***************************************************************************
 /// </summary>
 
@@ -83,6 +83,7 @@ type
 implementation
 
 uses
+  System.SysUtils,
   System.IOUtils,
   System.IniFiles,
   uGetDeviceName;
