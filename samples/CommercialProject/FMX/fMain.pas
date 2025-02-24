@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// CliTseg API client for Delphi
+/// CilTseg API client for Delphi
 ///
 /// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-17T19:19:12.000+01:00
-/// Signature : db55468e5ca69d99c037cc62a19cda73a9beacb7
+/// File last update : 2025-02-24T20:07:44.000+01:00
+/// Signature : 86cc9bc4b8e34669d254a55d6beffe679da0653e
 /// ***************************************************************************
 /// </summary>
 
@@ -132,7 +132,7 @@ var
   s: string;
   Tab: TStringDynArray;
   CurPlatform: string;
-  CurReleaseDate: TDate;
+  // CurReleaseDate: TDate;
   DownloadURL: string;
 begin
   CilTsegAPI := TCilTsegClientLib.Create(CCiltsegServerURL, CCiltsegSoftwareID,
@@ -146,7 +146,7 @@ begin
           + 'contact the support if the problem persists.')
       else
       begin
-        CurReleaseDate := ISO8601ToDate(CVersionDate);
+        // CurReleaseDate := ISO8601ToDate(CVersionDate);
         CurPlatform := CSoftwareCurrentPlatform.ToLower;
         DownloadURL := '';
         Tab := Result.GetPlatforms;
@@ -160,6 +160,7 @@ begin
         if DownloadURL.IsEmpty then
           ShowMessage('No new release available.')
         else
+          // TODO : compare the release date and current program release date
           TDialogService.MessageDialog
             ('A new release is available, do you want to download it ?',
             TMsgDlgType.mtConfirmation, mbYesNo, TMsgDlgBtn.mbYes, 0,
