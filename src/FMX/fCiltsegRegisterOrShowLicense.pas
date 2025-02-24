@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// CliTseg API client for Delphi
+/// CilTseg API client for Delphi
 ///
 /// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-17T19:15:00.000+01:00
-/// Signature : 0d21c0cc2573b59f97ddd1a4738b8395299410d1
+/// File last update : 2025-02-24T19:58:26.000+01:00
+/// Signature : 9c330dfcf5a5779adf2518fb1d3835cb734a9222
 /// ***************************************************************************
 /// </summary>
 
@@ -73,6 +73,7 @@ type
     procedure btnCancelClick(Sender: TObject);
     procedure btnRegisterClick(Sender: TObject);
     procedure btnBuyClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
     class var HasInstance: byte;
   protected
@@ -183,15 +184,35 @@ var
 begin
   f := TfrmCilTsegRegisterOrShowLicense.Create(AOwner);
   try
+{$IF Defined(IOS) or Defined(ANDROID)}
+    try
+      f.Show;
+      Result := true;
+    finally
+    end;
+{$ELSE}
     try
       f.ShowModal;
       Result := true;
     finally
       f.free;
     end;
+{$ENDIF}
   except
     Result := false;
   end;
+end;
+
+procedure TfrmCilTsegRegisterOrShowLicense.FormClose(Sender: TObject;
+var Action: TCloseAction);
+begin
+{$IF Defined(IOS) or Defined(Android)}
+  tthread.ForceQueue(nil,
+    procedure
+    begin
+      Self.free;
+    end);
+{$ENDIF}
 end;
 
 procedure TfrmCilTsegRegisterOrShowLicense.FormCreate(Sender: TObject);
@@ -201,7 +222,7 @@ begin
   pnlShowLicenseDetails.Visible := not pnlRegisterLicense.Visible;
 
   if pnlRegisterLicense.Visible then
-    tthread.forcequeue(nil,
+    tthread.ForceQueue(nil,
       procedure
       begin
         edtUserEmail.SetFocus;
@@ -211,7 +232,7 @@ begin
   begin
     lblShow.Text := 'The software has been registered on this computer by ' +
       tconfig.Current.LicenseEmail + '.';
-    tthread.forcequeue(nil,
+    tthread.ForceQueue(nil,
       procedure
       begin
         btnClose.SetFocus;
