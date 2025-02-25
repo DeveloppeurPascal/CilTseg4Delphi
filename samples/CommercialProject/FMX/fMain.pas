@@ -132,7 +132,7 @@ var
   s: string;
   Tab: TStringDynArray;
   CurPlatform: string;
-  // CurReleaseDate: TDate;
+  CurReleaseDate: TDate;
   DownloadURL: string;
 begin
   CilTsegAPI := TCilTsegClientLib.Create(CCiltsegServerURL, CCiltsegSoftwareID,
@@ -146,7 +146,7 @@ begin
           + 'contact the support if the problem persists.')
       else
       begin
-        // CurReleaseDate := ISO8601ToDate(CVersionDate);
+        CurReleaseDate := ISO8601ToDate(CVersionDate);
         CurPlatform := CSoftwareCurrentPlatform.ToLower;
         DownloadURL := '';
         Tab := Result.GetPlatforms;
@@ -157,10 +157,9 @@ begin
             DownloadURL := Tab[i];
             break;
           end;
-        if DownloadURL.IsEmpty then
+        if DownloadURL.IsEmpty or (CurReleaseDate >= Result.ReleaseDate) then
           ShowMessage('No new release available.')
         else
-          // TODO : compare the release date and current program release date
           TDialogService.MessageDialog
             ('A new release is available, do you want to download it ?',
             TMsgDlgType.mtConfirmation, mbYesNo, TMsgDlgBtn.mbYes, 0,
