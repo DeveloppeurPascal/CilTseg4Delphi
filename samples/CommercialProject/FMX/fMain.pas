@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2025-02-25T20:29:42.000+01:00
-/// Signature : 947eccb8a0079cf4d3164068048df2f4e564e600
+/// File last update : 2025-02-27T21:48:03.593+01:00
+/// Signature : 97e67eba0bd2d41e282da4a6f172cd8ad4bdd32d
 /// ***************************************************************************
 /// </summary>
 
@@ -154,7 +154,7 @@ begin
         for i := 0 to length(Tab) - 1 do
           if Tab[i].ToLower = CurPlatform then
           begin
-            DownloadURL := Tab[i];
+            DownloadURL := result.GetDownloadURL(Tab[i]);
             break;
           end;
         if DownloadURL.IsEmpty or (CurReleaseDate >= Result.ReleaseDate) then
