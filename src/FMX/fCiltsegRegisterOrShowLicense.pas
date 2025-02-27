@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2025-02-24T19:58:26.000+01:00
-/// Signature : 9c330dfcf5a5779adf2518fb1d3835cb734a9222
+/// File last update : 2025-02-27T21:08:14.000+01:00
+/// Signature : ace962a8ce7c829d475d9f8bd2dc0e9efad25ffb
 /// ***************************************************************************
 /// </summary>
 
@@ -221,22 +221,31 @@ begin
     tconfig.Current.LicenseActivationNumber.IsEmpty;
   pnlShowLicenseDetails.Visible := not pnlRegisterLicense.Visible;
 
+{$IFDEF MSWINDOWS}
+  // Sur Windows c'est exécuté une fois la fenêtre ouverte.
+  // Sur Mac c'est exécuté après fermeture de la fenêtre et provoquait une violation d'accès d'où l'ajout de Assigned()
   if pnlRegisterLicense.Visible then
     tthread.ForceQueue(nil,
       procedure
       begin
-        edtUserEmail.SetFocus;
+        if assigned(edtUserEmail) then
+          edtUserEmail.SetFocus;
       end);
-
+{$ENDIF}
   if pnlShowLicenseDetails.Visible then
   begin
     lblShow.Text := 'The software has been registered on this computer by ' +
       tconfig.Current.LicenseEmail + '.';
+{$IFDEF MSWINDOWS}
+    // Sur Windows c'est exécuté une fois la fenêtre ouverte.
+    // Sur Mac c'est exécuté après fermeture de la fenêtre et provoquait une violation d'accès d'où l'ajout de Assigned()
     tthread.ForceQueue(nil,
       procedure
       begin
-        btnClose.SetFocus;
+        if assigned(btnClose) then
+          btnClose.SetFocus;
       end);
+{$ENDIF}
   end;
 end;
 
