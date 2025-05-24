@@ -1,9 +1,9 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// CliTseg API client for Delphi
+/// CilTseg API client for Delphi
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-11-24T16:55:06.000+01:00
-/// Signature : de232d2b5f8c1d91b0669076b342c83d63279e4c
+/// File last update : 2025-05-24T17:30:00.000+02:00
+/// Signature : fb1cc3d2ef8fa07afb354b11713c13bfb75cb948
 /// ***************************************************************************
 /// </summary>
 
@@ -167,7 +167,7 @@ begin
         Tab := Result.GetPlatforms;
         s := '';
         for i := 0 to length(Tab) - 1 do
-          s := Tab[i] + ':' + Result.GetDownloadURL(Tab[i]) + sLineBreak;
+          s := s + Tab[i] + ':' + Result.GetDownloadURL(Tab[i]) + sLineBreak;
         ShowMessage(Result.SoftwareLabel + sLineBreak + Result.SoftwareURL +
           sLineBreak + Result.ReleaseVersion + sLineBreak +
           DateToStr(Result.ReleaseDate) + sLineBreak + s);
