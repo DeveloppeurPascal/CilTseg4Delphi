@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2025-02-27T21:08:14.000+01:00
-/// Signature : ace962a8ce7c829d475d9f8bd2dc0e9efad25ffb
+/// File last update : 2025-05-24T18:28:32.000+02:00
+/// Signature : ce0330452765c6567631cc3ceca75016d7512434
 /// ***************************************************************************
 /// </summary>
 
@@ -56,6 +56,9 @@ uses
   FMX.Edit;
 
 type
+  /// <summary>
+  /// CilTseg license management default dialog box for your FireMonkey projects
+  /// </summary>
   TfrmCilTsegRegisterOrShowLicense = class(TForm)
     pnlRegisterLicense: TLayout;
     pnlShowLicenseDetails: TLayout;
@@ -78,8 +81,20 @@ type
     class var HasInstance: byte;
   protected
   public
+    /// <summary>
+    /// Constructor of this class. It's better to call the Execute() method
+    /// then Create() but it depends on what you want to personalize.
+    /// </summary>
     constructor Create(AOwner: TComponent); override;
+    /// <summary>
+    /// Destructor for this class. Call ".Free()" or "FreeAndNil()" on your
+    /// instance.
+    /// </summary>
     destructor Destroy; override;
+    /// <summary>
+    /// Open an instance of this dialog box as a modal form and manage the
+    /// license registration process for you.
+    /// </summary>
     class function Execute(AOwner: TComponent): boolean;
   end;
 

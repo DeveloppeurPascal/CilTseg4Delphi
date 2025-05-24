@@ -1,7 +1,7 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// CliTseg API client for Delphi
+/// CilTseg API client for Delphi
 ///
 /// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-17T19:20:18.000+01:00
-/// Signature : 9accac33d445729f3a138002dd46dd8497248cc3
+/// File last update : 2025-05-24T18:27:02.000+02:00
+/// Signature : 656c068f3fdb8aa5f3acecd1c4e3f170b3898ea5
 /// ***************************************************************************
 /// </summary>
 
@@ -54,6 +54,9 @@ uses
   Vcl.Mask;
 
 type
+  /// <summary>
+  /// CilTseg license management default dialog box for your VCL projects
+  /// </summary>
   TfrmCilTsegRegisterOrShowLicense = class(TForm)
     pnlRegisterLicense: TPanel;
     pnlShowLicenseDetails: TPanel;
@@ -73,8 +76,20 @@ type
     class var HasInstance: byte;
   protected
   public
+    /// <summary>
+    /// Constructor of this class. It's better to call the Execute() method
+    /// then Create() but it depends on what you want to personalize.
+    /// </summary>
     constructor Create(AOwner: TComponent); override;
+    /// <summary>
+    /// Destructor for this class. Call ".Free()" or "FreeAndNil()" on your
+    /// instance.
+    /// </summary>
     destructor Destroy; override;
+    /// <summary>
+    /// Open an instance of this dialog box as a modal form and manage the
+    /// license registration process for you.
+    /// </summary>
     class function Execute(AOwner: TComponent): boolean;
   end;
 

@@ -1,9 +1,9 @@
 ﻿/// <summary>
 /// ***************************************************************************
 ///
-/// CliTseg API client for Delphi
+/// CilTseg API client for Delphi
 ///
-/// Copyright 2024 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -30,8 +30,8 @@
 /// https://github.com/DeveloppeurPascal/CilTseg4Delphi
 ///
 /// ***************************************************************************
-/// File last update : 2024-11-24T15:06:40.000+01:00
-/// Signature : 900267355a873dfb77e42e5585224d5e3e512c46
+/// File last update : 2025-05-24T18:16:38.000+02:00
+/// Signature : 178ce81e765ec770329e91af4c1dfa74618cb471
 /// ***************************************************************************
 /// </summary>
 
@@ -44,16 +44,29 @@ uses
   System.Generics.Collections;
 
 type
+  /// <summary>
+  /// Ancestor for CilTseg classes with a common Error property.
+  /// </summary>
   TCilTsegData = class
   private
     FError: boolean;
     procedure SetError(const Value: boolean);
   protected
   public
+    /// <summary>
+    /// This property is True if an error occured to access to this an API or some datas.
+    /// If all went good, the Error property is set to False.
+    /// </summary>
     property Error: boolean read FError write SetError;
+    /// <summary>
+    /// Constructor method to override in your descendant classes.
+    /// </summary>
     constructor Create; virtual;
   end;
 
+  /// <summary>
+  /// The license class with all properties available on a valid license.
+  /// </summary>
   TCilTsegLicenseInfo = class(TCilTsegData)
   private
     FLicenseNumber: string;
@@ -66,15 +79,37 @@ type
     procedure SetFirst_Activation(const Value: TDate);
   protected
   public
+    /// <summary>
+    /// The license number to see as a unique key.
+    /// </summary>
     property LicenseNumber: string read FLicenseNumber write SetLicenseNumber;
+    /// <summary>
+    /// Date of the first activation of this license key.
+    /// </summary>
     property First_Activation: TDate read FFirst_Activation
       write SetFirst_Activation;
+    /// <summary>
+    /// Date of the end of validity for this license key.
+    /// </summary>
     property End_Of_License: TDate read FEnd_Of_License write SetEnd_Of_License;
+    /// <summary>
+    /// Date of the end of the maintenance for this license key.
+    /// </summary>
     property End_Of_Maintenance: TDate read FEnd_Of_Maintenance
       write SetEnd_Of_Maintenance;
+    /// <summary>
+    /// Constructor method for this class.
+    /// </summary>
     constructor Create; override;
   end;
 
+  /// <summary>
+  /// Class used to store a program release with its properties and links.
+  /// </summary>
+  /// <remarks>
+  /// When filled by the "get last version" API endpoint, the instance contains
+  /// the properties of latest release ordered by date.
+  /// </remarks>
   TCilTsegLastRelease = class(TCilTsegData)
   private
     FReleaseVersion: string;
@@ -90,19 +125,62 @@ type
 
   var
     FPlatforms: TPlatforms;
+    procedure AddPlatform(const APlatform, ADownloadURL: string);
   public
+    /// <summary>
+    /// Name of your software (as written in CilTseg publisher backoffice).
+    /// </summary>
     property SoftwareLabel: string read FSoftwareLabel write SetSoftwareLabel;
+    /// <summary>
+    /// URL of your software (as written in CilTseg publisher backoffice).
+    /// </summary>
     property SoftwareURL: string read FSoftwareURL write SetSoftwareURL;
+    /// <summary>
+    /// Version number of this release.
+    /// </summary>
     property ReleaseVersion: string read FReleaseVersion
       write SetReleaseVersion;
+    /// <summary>
+    /// Date of this version.
+    /// </summary>
     property ReleaseDate: TDate read FReleaseDate write SetReleaseDate;
+    /// <summary>
+    /// Returns a list of available platforms for this release.
+    /// </summary>
+    /// <remarks>
+    /// "platforms" are free labels in the CilTseg backoffice. You have to
+    /// compare them to this software platform (with the label you have choosen).
+    ///
+    /// I generally use compilation directives and compiler target name in my
+    /// projects but you are free to use what ever you want.
+    /// </remarks>
     function GetPlatforms: TStringDynArray;
+    /// <summary>
+    /// Returns the URL associated to a platform available for this release.
+    /// </summary>
     function GetDownloadURL(const APlatform: string): string;
-    procedure AddPlatform(const APlatform, ADownloadURL: string);
+    /// <summary>
+    /// Constructor method for this class.
+    /// </summary>
     constructor Create; Override;
+    /// <summary>
+    /// Destructor method for this class.
+    /// </summary>
+    /// <remarks>
+    /// Don't call it directly. Use ".Free()" or "FreeAndNil()" on an instance.
+    /// </remarks>
     destructor Destroy; override;
   end;
 
+  /// <summary>
+  /// Properties of an activated license.
+  /// </summary>
+  /// <remarks>
+  /// An activated license is associated to devices(s), email(s) and software(s).
+  /// Each activation has a unique activation number.
+  /// The number of allowed activations depends on an activation counter in
+  /// the license depending of its license type.
+  /// </remarks>
   TCilTsegLicenseActivation = class(TCilTsegData)
   private
     FActivationNumber: string;
@@ -117,17 +195,39 @@ type
     procedure SetFirst_Activation(const Value: TDate);
   protected
   public
+    /// <summary>
+    /// The license key for this activation.
+    /// </summary>
     property LicenseNumber: string read FLicenseNumber write SetLicenseNumber;
+    /// <summary>
+    /// The unique activation number (can be used to check the llicence
+    /// validity, the activation validity, the device validity, ...).
+    /// </summary>
     property ActivationNumber: string read FActivationNumber
       write SetActivationNumber;
+    /// <summary>
+    /// Date of the first activation of this license key on this device.
+    /// </summary>
     property First_Activation: TDate read FFirst_Activation
       write SetFirst_Activation;
+    /// <summary>
+    /// Date of the end of validity for the license key.
+    /// </summary>
     property End_Of_License: TDate read FEnd_Of_License write SetEnd_Of_License;
+    /// <summary>
+    /// Date of the end of maintenance subscription for the license key.
+    /// </summary>
     property End_Of_Maintenance: TDate read FEnd_Of_Maintenance
       write SetEnd_Of_Maintenance;
+    /// <summary>
+    /// Constructor method for this class.
+    /// </summary>
     constructor Create; override;
   end;
 
+  /// <summary>
+  /// Use an instance of this class to access to CilTseg API.
+  /// </summary>
   TCilTsegClientLib = class
   private
     FSoftwareToken: string;
@@ -139,15 +239,67 @@ type
   protected
     procedure CheckSettings;
   public
+    /// <summary>
+    /// URL of the CilTseg instance you want to work with.
+    /// </summary>
     property ServerURL: string read FServerURL write SetServerURL;
+    /// <summary>
+    /// Unique ID of the software in the CilTseg backoffice.
+    /// </summary>
     property SoftwareID: integer read FSoftwareID write SetSoftwareID;
+    /// <summary>
+    /// Unique PRIVATE token of the software in the CilTseg backoffice.
+    /// </summary>
     property SoftwareToken: string read FSoftwareToken write SetSoftwareToken;
+    /// <summary>
+    /// Constructor method to get an instance for this class.
+    /// </summary>
     constructor Create(const AServerURL: string; const ASoftwareID: integer;
       const ASoftwareToken: string);
+    /// <summary>
+    /// Call the API to get the properties of the given license key.
+    /// </summary>
+    /// <remarks>
+    /// For security reasons it'll answer only for available license key or a
+    /// key linked to your software ID.
+    /// The call is done in current thread. It can block the process if a
+    /// timeout occured.
+    /// </remarks>
     function GetLicenseInfo(const ALicenseNumber: string): TCilTsegLicenseInfo;
+    /// <summary>
+    /// Call the API to get the properties of the last declared version for
+    /// this software in the CilTseg backoffice.
+    /// </summary>
+    /// <remarks>
+    /// Last release can be current release, a previous or future one depending
+    /// on what you have declared and enabled in your CilTseg backoffice.
+    /// The call is done in current thread. It can block the process if a
+    /// timeout occured.
+    /// </remarks>
     function GetSoftwareLastRelease: TCilTsegLastRelease;
+    /// <summary>
+    /// Call the API to activate the license key on this device.
+    /// </summary>
+    /// <remarks>
+    /// See the DeviceName as a computer (real or virtual machine) unique
+    /// identifier. You can use the operating system name, a device or
+    /// harddrive identifier depending on the security level you need.
+    /// CilTseg won't do anithing with it. It's your job to get and check it
+    /// to verify a license activation with CheckLicenseActivation() method.
+    /// The call is done in current thread. It can block the process if a
+    /// timeout occured.
+    /// </remarks>
     function LicenseActivation(const ALicenseNumber, AUserEmail,
       ADeviceName: string): TCilTsegLicenseActivation;
+    /// <summary>
+    /// Call the API to check the validity of a license activation.
+    /// </summary>
+    /// <remarks>
+    /// Send the values used during the license activation and the activation
+    /// number the activation call gave you.
+    /// The call is done in current thread. It can block the process if a
+    /// timeout occured.
+    /// </remarks>
     function CheckLicenseActivation(const ALicenseNumber, AUserEmail,
       ADeviceName, AActivationNumber: string): TCilTsegLicenseActivation;
   end;
