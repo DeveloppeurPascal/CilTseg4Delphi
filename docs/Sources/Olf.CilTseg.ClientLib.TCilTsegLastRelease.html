@@ -20,7 +20,13 @@
 <p class="declaration">
 <code>type TCilTsegLastRelease = class(<a class="normal" href="Olf.CilTseg.ClientLib.TCilTsegData.html">TCilTsegData</a>)</code></p>
 <h2 class="description">Description</h2>
-<div class="nodescription">No description available, ancestor TCilTsegData description follows</div><span id="PasDoc-Hierarchy"></span><h2 class="hierarchy">Hierarchy</h2>
+<p>
+ Class used to store a program release with its properties and links. </p>
+<p>
+
+
+<p>When filled by the &quot;get last version&quot; API endpoint, the instance contains the properties of latest release ordered by date.</p>
+<span id="PasDoc-Hierarchy"></span><h2 class="hierarchy">Hierarchy</h2>
 <ul class="hierarchy"><li class="ancestor">TObject</li>
 <li class="ancestor"><a class="normal" href="Olf.CilTseg.ClientLib.TCilTsegData.html">TCilTsegData</a></li>
 <li class="thisitem">TCilTsegLastRelease</li></ul><h2 class="overview">Overview</h2>
@@ -41,16 +47,16 @@
 <span id="PasDoc-Methods"></span><h3 class="summary">Methods</h3>
 <table class="summary wide_list">
 <tr class="list">
-<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#GetPlatforms">GetPlatforms</a></strong>: TStringDynArray;</code></td>
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
+<td class="itemcode"><code>procedure <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#AddPlatform">AddPlatform</a></strong>(const APlatform, ADownloadURL: string);</code></td>
 </tr>
 <tr class="list2">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#GetDownloadURL">GetDownloadURL</a></strong>(const APlatform: string): string;</code></td>
+<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#GetPlatforms">GetPlatforms</a></strong>: TStringDynArray;</code></td>
 </tr>
 <tr class="list">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>procedure <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#AddPlatform">AddPlatform</a></strong>(const APlatform, ADownloadURL: string);</code></td>
+<td class="itemcode"><code>function <strong><a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html#GetDownloadURL">GetDownloadURL</a></strong>(const APlatform: string): string;</code></td>
 </tr>
 <tr class="list2">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
@@ -103,23 +109,7 @@
 <h3 class="detail">Methods</h3>
 <table class="detail wide_list">
 <tr class="list">
-<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><span id="GetPlatforms"></span><code>function <strong>GetPlatforms</strong>: TStringDynArray;</code></td>
-</tr>
-<tr><td colspan="2">
-&nbsp;</td></tr>
-</table>
-<table class="detail wide_list">
-<tr class="list">
-<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><span id="GetDownloadURL"></span><code>function <strong>GetDownloadURL</strong>(const APlatform: string): string;</code></td>
-</tr>
-<tr><td colspan="2">
-&nbsp;</td></tr>
-</table>
-<table class="detail wide_list">
-<tr class="list">
-<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="visibility"><a href="legend.html"><img  src="protected.gif" alt="Protected" title="Protected"></a></td>
 <td class="itemcode"><span id="AddPlatform"></span><code>procedure <strong>AddPlatform</strong>(const APlatform, ADownloadURL: string);</code></td>
 </tr>
 <tr><td colspan="2">
@@ -128,10 +118,38 @@
 <table class="detail wide_list">
 <tr class="list">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="GetPlatforms"></span><code>function <strong>GetPlatforms</strong>: TStringDynArray;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+ Returns a list of available platforms for this release. </p>
+<p>
+
+
+<p>&quot;platforms&quot; are free labels in the CilTseg backoffice. You have to compare them to this software platform (with the label you have choosen).
+
+<p>I generally use compilation directives and compiler target name in my projects but you are free to use what ever you want.</p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
+<td class="itemcode"><span id="GetDownloadURL"></span><code>function <strong>GetDownloadURL</strong>(const APlatform: string): string;</code></td>
+</tr>
+<tr><td colspan="2">
+<p>
+ Returns the URL associated to a platform available for this release. </p>
+</td></tr>
+</table>
+<table class="detail wide_list">
+<tr class="list">
+<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
 <td class="itemcode"><span id="Create"></span><code>constructor <strong>Create</strong>; Override;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Constructor method for this class. </p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -139,7 +157,13 @@
 <td class="itemcode"><span id="Destroy"></span><code>destructor <strong>Destroy</strong>; override;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Destructor method for this class. </p>
+<p>
+
+
+<p>Don't call it directly. Use &quot;.Free()&quot; or &quot;FreeAndNil()&quot; on an instance.</p>
+</td></tr>
 </table>
 <h3 class="detail">Properties</h3>
 <table class="detail wide_list">
@@ -148,7 +172,9 @@
 <td class="itemcode"><span id="SoftwareLabel"></span><code>property <strong>SoftwareLabel</strong>: string read FSoftwareLabel write SetSoftwareLabel;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Name of your software (as written in CilTseg publisher backoffice). </p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -156,7 +182,9 @@
 <td class="itemcode"><span id="SoftwareURL"></span><code>property <strong>SoftwareURL</strong>: string read FSoftwareURL write SetSoftwareURL;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ URL of your software (as written in CilTseg publisher backoffice). </p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -165,7 +193,9 @@
       write SetReleaseVersion;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Version number of this release. </p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -173,7 +203,9 @@
 <td class="itemcode"><span id="ReleaseDate"></span><code>property <strong>ReleaseDate</strong>: TDate read FReleaseDate write SetReleaseDate;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Date of this version. </p>
+</td></tr>
 </table>
 <a href="https://ciltseg4delphi.developpeur-pascal.fr/" target="_blank">CilTseg for Delphi</a> (c) 2024-2025 <a href="https://patrick.premartin.fr" target="_blank">Patrick PREMARTIN</a> - Powered by <a href="https://pasdoc.github.io/" target="_blank">PasDoc</a>
 <hr><span class="appinfo"><em>Generated by <a href="https://pasdoc.github.io/">PasDoc 0.16.0</a>. </em>

@@ -20,6 +20,8 @@
 <p class="declaration">
 <code>type TCilTsegClientLib = class(TObject)</code></p>
 <h2 class="description">Description</h2>
+<p>
+ Use an instance of this class to access to CilTseg API. </p>
 <span id="PasDoc-Hierarchy"></span><h2 class="hierarchy">Hierarchy</h2>
 <ul class="hierarchy"><li class="ancestor">TObject</li>
 <li class="thisitem">TCilTsegClientLib</li></ul><h2 class="overview">Overview</h2>
@@ -81,7 +83,9 @@
 <td class="itemcode"><span id="Create"></span><code>constructor <strong>Create</strong>(const AServerURL: string; const ASoftwareID: integer; const ASoftwareToken: string);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Constructor method to get an instance for this class. </p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -89,7 +93,13 @@
 <td class="itemcode"><span id="GetLicenseInfo"></span><code>function <strong>GetLicenseInfo</strong>(const ALicenseNumber: string): <a href="Olf.CilTseg.ClientLib.TCilTsegLicenseInfo.html">TCilTsegLicenseInfo</a>;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Call the API to get the properties of the given license key. </p>
+<p>
+
+
+<p>For security reasons it'll answer only for available license key or a key linked to your software ID. The call is done in current thread. It can block the process if a timeout occured.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -97,7 +107,13 @@
 <td class="itemcode"><span id="GetSoftwareLastRelease"></span><code>function <strong>GetSoftwareLastRelease</strong>: <a href="Olf.CilTseg.ClientLib.TCilTsegLastRelease.html">TCilTsegLastRelease</a>;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Call the API to get the properties of the last declared version for this software in the CilTseg backoffice. </p>
+<p>
+
+
+<p>Last release can be current release, a previous or future one depending on what you have declared and enabled in your CilTseg backoffice. The call is done in current thread. It can block the process if a timeout occured.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -105,7 +121,13 @@
 <td class="itemcode"><span id="LicenseActivation"></span><code>function <strong>LicenseActivation</strong>(const ALicenseNumber, AUserEmail, ADeviceName: string): <a href="Olf.CilTseg.ClientLib.TCilTsegLicenseActivation.html">TCilTsegLicenseActivation</a>;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Call the API to activate the license key on this device. </p>
+<p>
+
+
+<p>See the DeviceName as a computer (real or virtual machine) unique identifier. You can use the operating system name, a device or harddrive identifier depending on the security level you need. CilTseg won't do anithing with it. It's your job to get and check it to verify a license activation with CheckLicenseActivation() method. The call is done in current thread. It can block the process if a timeout occured.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -113,7 +135,13 @@
 <td class="itemcode"><span id="CheckLicenseActivation"></span><code>function <strong>CheckLicenseActivation</strong>(const ALicenseNumber, AUserEmail, ADeviceName, AActivationNumber: string): <a href="Olf.CilTseg.ClientLib.TCilTsegLicenseActivation.html">TCilTsegLicenseActivation</a>;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Call the API to check the validity of a license activation. </p>
+<p>
+
+
+<p>Send the values used during the license activation and the activation number the activation call gave you. The call is done in current thread. It can block the process if a timeout occured.</p>
+</td></tr>
 </table>
 <h3 class="detail">Properties</h3>
 <table class="detail wide_list">
@@ -122,7 +150,9 @@
 <td class="itemcode"><span id="ServerURL"></span><code>property <strong>ServerURL</strong>: string read FServerURL write SetServerURL;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ URL of the CilTseg instance you want to work with. </p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -130,7 +160,9 @@
 <td class="itemcode"><span id="SoftwareID"></span><code>property <strong>SoftwareID</strong>: integer read FSoftwareID write SetSoftwareID;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Unique ID of the software in the CilTseg backoffice. </p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -138,7 +170,9 @@
 <td class="itemcode"><span id="SoftwareToken"></span><code>property <strong>SoftwareToken</strong>: string read FSoftwareToken write SetSoftwareToken;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+ Unique PRIVATE token of the software in the CilTseg backoffice. </p>
+</td></tr>
 </table>
 <a href="https://ciltseg4delphi.developpeur-pascal.fr/" target="_blank">CilTseg for Delphi</a> (c) 2024-2025 <a href="https://patrick.premartin.fr" target="_blank">Patrick PREMARTIN</a> - Powered by <a href="https://pasdoc.github.io/" target="_blank">PasDoc</a>
 <hr><span class="appinfo"><em>Generated by <a href="https://pasdoc.github.io/">PasDoc 0.16.0</a>. </em>

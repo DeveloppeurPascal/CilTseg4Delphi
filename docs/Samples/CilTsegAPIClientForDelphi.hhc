@@ -2095,6 +2095,10 @@
                                                   <param name="Local" value="fCiltsegRegisterOrShowLicense.TfrmCilTsegRegisterOrShowLicense.Execute.html">
                                                   </OBJECT>
                                               <LI> <OBJECT type="text/sitemap">
+                                                  <param name="Name" value="FormClose">
+                                                  <param name="Local" value="fCiltsegRegisterOrShowLicense.TfrmCilTsegRegisterOrShowLicense.FormClose.html">
+                                                  </OBJECT>
+                                              <LI> <OBJECT type="text/sitemap">
                                                   <param name="Name" value="FormCreate">
                                                   <param name="Local" value="fCiltsegRegisterOrShowLicense.TfrmCilTsegRegisterOrShowLicense.FormCreate.html">
                                                   </OBJECT>
