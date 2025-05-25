@@ -1,39 +1,39 @@
-﻿/// <summary>
-/// ***************************************************************************
-///
-/// CilTseg API client for Delphi
-///
-/// Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
-///
-/// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-/// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-/// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
-/// THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-/// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-/// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
-/// DEALINGS IN THE SOFTWARE.
-///
-/// ***************************************************************************
-///
-/// Client units and samples for the Ciltseg API to manage and use licenses
-/// keys in your Delphi project.
-///
-/// ***************************************************************************
-///
-/// Author(s) :
-/// Patrick PREMARTIN
-///
-/// Site :
-/// https://ciltseg.olfsoftware.fr/
-///
-/// Project site :
-/// https://github.com/DeveloppeurPascal/CilTseg4Delphi
-///
-/// ***************************************************************************
-/// File last update : 2025-05-24T18:16:38.000+02:00
-/// Signature : 178ce81e765ec770329e91af4c1dfa74618cb471
-/// ***************************************************************************
-/// </summary>
+﻿(* C2PP
+  ***************************************************************************
+
+  CilTseg API client for Delphi
+
+  Copyright 2024-2025 Patrick Prémartin under AGPL 3.0 license.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+  THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+  DEALINGS IN THE SOFTWARE.
+
+  ***************************************************************************
+
+  Client units and samples for the Ciltseg API to manage and use licenses
+  keys in your Delphi project.
+
+  ***************************************************************************
+
+  Author(s) :
+  Patrick PREMARTIN
+
+  Site :
+  https://ciltseg.olfsoftware.fr/
+
+  Project site :
+  https://github.com/DeveloppeurPascal/CilTseg4Delphi
+
+  ***************************************************************************
+  File last update : 2025-05-24T18:20:05.183+02:00
+  Signature : dcc5ee76a240acb546bdd927644555bd69f096a3
+  ***************************************************************************
+*)
 
 unit Olf.CilTseg.ClientLib;
 
